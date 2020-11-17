@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {font-family: "Lato", sans-serif}
+.mySlides {display: none}
+li
+{
+  font-size: 150%;
+  color: mediumvioletred;
+}
+#process
+{
+  color:indigo;
+}
+.bgimg {
+  background-image: url('bgimage.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  
+}
+.box {
+  opacity: 1;
+}
+.cardpx {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #16384c;
+    }
+    .container {
+      position: relative;
+      width: 1100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 30px;
+
+    }
+.container .card {
+      position: relative;
+      max-width: 300px;
+      height: 215px;
+      background: #fff;
+      margin: 30px 10px;
+      padding: 20px 15px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 5px 202px rgba(0,0,0,0.5);
+      transition: 0.3s ease-in-out;
+    }
+    .container .card:hover {
+      height: 420px;
+    }
+.container .card .imgBx {
+      position: relative;
+      width: 260px;
+      height: 260px;
+      top: -60px;
+      left: 20px;
+      z-index: 1;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    }  
+    .container .card .imgBx img {
+      max-width:100%;
+      border-radius: 4px;
+    }
+    .container .card .content {
+      position: relative;
+      margin-top: -140px;
+      padding: 10px 15px;
+      text-align: center;
+      color: #111;
+      visibility: hidden;
+      opacity: 0;
+      transition: 0.3s ease-in-out;
+    }
+    .container .card:hover .content {
+      visibility: visible;
+      opacity: 1;
+      margin-top: -40px;
+      transition-delay: 0.3s;
+
+    }
+    
+
+.wands {
+    cursor: pointer;
+    width: 340px;
+    height: 340px;
+}
+.front,.back {
+    width: 900px;
+    height: 100%;
+    overflow: hidden;
+    backface-visibility: hidden;
+    position: absolute;
+    transition: transform .6s linear;
+}
+.front img {
+    height: 340px;
+    width: 900px;
+    
+}
+
+.front {
+    transform: perspective(600px) rotateY(0deg);
+}
+.back {
+    background: #f1f1f1;
+    transform: perspective(600px) rotateY(180deg);
+}
+.back-cont {
+    
+    
+    width: 900px;
+    height: 380px;
+    font-style: oblique;
+    font-size: large;
+}
+
+.wands:hover > .front {
+    transform: perspective(600px) rotateY(-180deg);
+}
+.wands:hover > .back {
+    transform: perspective(600px) rotateY(0deg);
+}
+
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+    <a href="#pack" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ABOUT</a>
+    <a href="#menu" class="w3-bar-item w3-button w3-padding-large w3-hide-small">FEATURES</a>
+    
+    
+    <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
+  </div>
+</div>
+
+<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+  <a href="#pack" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">BAND</a>
+  <a href="#menu" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">FEATURES</a>
+  
+  <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">MERCH</a>
+</div>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:2000px;margin-top:46px">
+
+  <!-- Packing video -->
+  <div class="mySlides w3-display-container w3-center">
+    <img src="pack.gif" style="width:100%">
+
+  </div>
+  
+
+  <!-- The Content Section -->
+  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="pack">
+    <h2 class="w3-wide">PACKING</h2>
+    
+    <p class="w3-justify">Packing involves placing the items into the appropriate sized box with the right packaging materials to ensure they reach their final destination undamaged. To reduce shipping costs, packing should keep an order within the smallest number of boxes and use the right type of packing material(s) for each product.</p>
+    <p class="w3-justify">In the packing area, shipping cartons are build. Packing will retrieve product from previous area’s like Picking and Unit VAS when unit vas is done before packing.</p>
+    <div class="w3-row w3-center w3-dark-grey w3-padding-16">
+        <h2 class="w3-wide">Packing Process</h2>
+        </div>
+        <p class="w3-justify">There are different kinds of holders that can be brought to the Packing area: totes, shipping cartons, trolley’s and shelve units. All of these holders will need to be repacked into shipping cartons. 
+        </p>
+        <p class="w3-justify">After the packing process, the shipping files will need to be updated and mostly the shipping label and carton content label needs to be printed. When the holder that comes to the packing area is already a shipping carton, then the shipping label does not need to be printed anymore. By use of parameters the system will determine if carton content label needs to be printed or not. </p>
+    <p class="w3-justify">For the Digital Cartons, the carrier shipping label will be printed. For both the Apparel and FTW Digital Cartons, the Carton Content Label will not be printed. This is controlled using a parameter</p>
+    <p class="w3-justify">For digital cartons, after Packing and/or the optional VAS activity is completed, user will be directed to Weight & Size processing screen where the user will perform weighing and update the same as required. </p>
+      </div>
+
+      <div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+        <div class="w3-content">
+          <div class="w3-third">
+        <img onmouseover="increase()" onmouseout="decrease()" id="cap" src="Capture.PNG"    width=100% >
+      </div>
+      <div class="w3-twothird">
+        <h1 id="process">Let us know about process flow</h1>
+        <p><i>Once the holder is scanned in packing screen, it checks whether the holder is attached to single shipping carton or multiple shipping carton.UPC checking will be done during packing process.Once packer confirms that he packed the shipping carton,labels will get printed.During packing process, exceptions such as shortage, overage, stop shipment might occur. </i></p>
+      </div>
+      </div>
+        </div>
+      </div>
+<div class="bgimg">
+  
+<div class="box">
+      <!-- Menu Container -->
+<div class="w3-container  w3-padding-64 w3-xxlarge" id="menu"></div>
+  <div class="w3-content">
+    
+    <h1 class="w3-center w3-jumbo" style="margin-bottom:64px; color:red">FEATURES</h1>
+    <div class="w3-row w3-center w3-border w3-border-dark-grey">
+      <a href="javascript:void(0)" onclick="openMenu(event, 'AUTO PACK READY');" id="myLink">
+        <div class="w3-col s6 tablink w3-padding-large w3-hover-red">AUTO PACK READY</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'W & S');">
+        <div class="w3-col s6 tablink w3-padding-large w3-hover-red">W&S</div>
+      </a>
+      
+    </div>
+
+    <div id="AUTO PACK READY" class="w3-container menu w3-padding-32 w3-white">
+      <div class="cardpx">
+        <div class="container">
+          <div class="card">
+            <div class="imgBx">
+              <img src="m4.PNG">
+            </div>
+            <div class="content">
+              <h2>MSG 4</h2>
+              <p>When msg 4 is received from WES system to XPDS, the message should be processed in the XPDS system</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="imgBx">
+              <img src="packrdy.PNG">
+            </div>
+            <div class="content">
+              <h2>Auto pack ready</h2>
+              <p>Packing work for the carton must be made ready and the database should be updated accordingly </p>
+            </div>
+          </div>
+        </div>
+        </div>
+        
+
+    </div>
+<div id="W & S" class="w3-container menu w3-padding-32 w3-white">
+  <div class="wands middle">
+    <div class="front">
+        <img src="w2.jpg">
+    </div>
+    <div class="back">
+        <div class="back-cont">
+            <li>When MSG5 is received for auto packed digital orders from WES system to XPDS System, the MSG5 should be processed in the XPDS System. </li>
+
+            <li>The MSG5 must be logged in MHRMSL file</li>
+
+            <li>Packing work for the carton must be completed and the databases should be updated accordingly.</li>
+
+            <li>Also, Packlist label should be printed,if the carton received is the last carton linked to the packlist </li>
+
+            <li>W&S message must be sent to BZ with correct information</li>
+                
+        </div>
+    </div>
+</div> 
+</div> 
+</div>
+</div>
+</div>
+</div>
+<marquee behavior="scroll" direction="right">
+  <img src="bye.gif" width="200" height="200" />
+</marquee>
+<script>
+  
+// Packing video
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 4000);    
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+// When the user clicks anywhere outside of the modal, close it
+var modal = document.getElementById('ticketModal');
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+  // Tabbed Menu
+  function openMenu(evt, menuName) {
+    var i, x, tablinks;
+    x = document.getElementsByClassName("menu");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < x.length; i++) {
+       tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+    }
+    document.getElementById(menuName).style.display = "block";
+    evt.currentTarget.firstElementChild.className += " w3-red";
+  }
+  document.getElementById("myLink").click();
+
+  var width=100;
+  var diff=2;
+  var intervalID=0;
+
+  function increase()
+  {
+    intervalID=setInterval(zoomIn,20);
+  }
+  function zoomIn()
+  {
+    if (width<200)
+    {
+      width=width+diff;
+      document.getElementById("cap").style.width=width;
+    }
+    else{
+      clearInterval(intervalID);
+    }
+  }
+  </script>
+  
+
+</body>
+</html>
