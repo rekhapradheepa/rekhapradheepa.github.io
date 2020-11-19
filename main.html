@@ -1,0 +1,274 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {font-family: "Lato", sans-serif}
+.mySlides {display: none}
+li
+{
+  font-size: 150%;
+  color: mediumvioletred;
+}
+#process
+{
+  color:indigo;
+}
+.bgimg {
+  background-image: url('bgimage.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  
+}
+.box {
+  opacity: 1;
+}
+.cardpx {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #16384c;
+    }
+    .container {
+      position: relative;
+      width: 1100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 30px;
+
+    }
+.container .card {
+      position: relative;
+      max-width: 300px;
+      height: 215px;
+      background: #fff;
+      margin: 30px 10px;
+      padding: 20px 15px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 5px 202px rgba(0,0,0,0.5);
+      transition: 0.3s ease-in-out;
+    }
+    .container .card:hover {
+      height: 420px;
+    }
+.container .card .imgBx {
+      position: relative;
+      width: 260px;
+      height: 260px;
+      top: -60px;
+      left: 20px;
+      z-index: 1;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    }  
+    .container .card .imgBx img {
+      max-width:100%;
+      border-radius: 4px;
+    }
+    .container .card .content {
+      position: relative;
+      margin-top: -140px;
+      padding: 10px 15px;
+      text-align: center;
+      color: #111;
+      visibility: hidden;
+      opacity: 0;
+      transition: 0.3s ease-in-out;
+    }
+    .container .card:hover .content {
+      visibility: visible;
+      opacity: 1;
+      margin-top: -40px;
+      transition-delay: 0.3s;
+
+    }
+    
+
+.wands {
+    cursor: pointer;
+    width: 340px;
+    height: 340px;
+}
+.front,.back {
+    width: 900px;
+    height: 100%;
+    overflow: hidden;
+    backface-visibility: hidden;
+    position: absolute;
+    transition: transform .6s linear;
+}
+.front img {
+    height: 340px;
+    width: 900px;
+    
+}
+
+.front {
+    transform: perspective(600px) rotateY(0deg);
+}
+.back {
+    background: #f1f1f1;
+    transform: perspective(600px) rotateY(180deg);
+}
+.back-cont {
+    
+    
+    width: 900px;
+    height: 380px;
+    font-style: oblique;
+    font-size: large;
+}
+
+.wands:hover > .front {
+    transform: perspective(600px) rotateY(-180deg);
+}
+.wands:hover > .back {
+    transform: perspective(600px) rotateY(0deg);
+}
+
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+    <a href="#PPL" class="w3-bar-item w3-button w3-padding-large w3-hide-small">PPL</a>
+    <a href="#PICKING" class="w3-bar-item w3-button w3-padding-large w3-hide-small">PICKING</a>
+    <a href="#PACKING" class="w3-bar-item w3-button w3-padding-large w3-hide-small">PACKING</a>
+    
+    <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
+  </div>
+</div>
+
+<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+  <a href="#PPL" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">PPL</a>
+  <a href="#PICKING" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">PICKING</a>
+  <a href="#PACKING" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">PACKING</a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">MERCH</a>
+</div>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:2000px;margin-top:46px">
+</div>
+<script>
+  
+    // Packing video
+    var myIndex = 0;
+    carousel();
+    
+    function carousel() {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+      }
+      myIndex++;
+      if (myIndex > x.length) {myIndex = 1}    
+      x[myIndex-1].style.display = "block";  
+      setTimeout(carousel, 4000);    
+    }
+    
+    // Used to toggle the menu on small screens when clicking on the menu button
+    function myFunction() {
+      var x = document.getElementById("navDemo");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else { 
+        x.className = x.className.replace(" w3-show", "");
+      }
+    }
+    / When the user clicks anywhere outside of the modal, close it
+var modal = document.getElementById('ticketModal');
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+  // Tabbed Menu
+  function openMenu(evt, menuName) {
+    var i, x, tablinks;
+    x = document.getElementsByClassName("menu");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < x.length; i++) {
+       tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+    }
+    document.getElementById(menuName).style.display = "block";
+    evt.currentTarget.firstElementChild.className += " w3-red";
+  }
+  document.getElementById("myLink").click();
+
+  var width=100;
+  var diff=2;
+  var intervalID=0;
+
+  function increase()
+  {
+    intervalID=setInterval(zoomIn,20);
+  }
+  function zoomIn()
+  {
+    if (width<200)
+    {
+      width=width+diff;
+      document.getElementById("cap").style.width=width;
+    }
+    else{
+      clearInterval(intervalID);
+    }
+  }
+  </script>
+  
+
+<!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script></body>
+</html>    
