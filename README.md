@@ -1,4 +1,4 @@
-[BBC PROJECT DETAILS](https://user-images.githubusercontent.com/68910145/101063550-ebb9a980-35b8-11eb-8d91-b27740ce6d24.gif)
+BBC PROJECT DETAILS
 
 [PPL](https://rekhapradheepa.github.io/ppl)
 
