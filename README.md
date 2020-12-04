@@ -1,9 +1,9 @@
 # BBC PROJECT DETAILS
 
 ## Table of contents
-* [PICK POOL PLANNING](#PPL)
-* [PICKING](#PICKING)
-* [PACKING](#PACKING)
+* [PICK POOL PLANNING](https://rekhapradheepa.github.io/ppl)
+* [PICKING](https://rekhapradheepa.github.io/picking)
+* [PACKING](https://rekhapradheepa.github.io/packing)
 
 [PPL](https://rekhapradheepa.github.io/ppl)
 
